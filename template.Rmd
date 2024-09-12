@@ -1,0 +1,41 @@
+---
+title: "Simple document"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+I'm an R Markdown document!
+
+# Section 1
+
+Here's a **code chunk** that samples from a *normal distribution*:
+
+```{r eval = FALSE}
+samp = rnorm(100)
+length(samp)
+```
+
+# Section 2
+
+I can take the mean of the sample, too! The mean is `r mean(samp)`.
+
+# Learning assessment
+
+This is code for the learning assessment P8105
+
+```{r}
+library(tidyverse)
+
+la_df = tibble(
+  norm_samp = rnorm(500, mean = 1),
+  samp_g0 = norm_samp > 0,
+  abs_v_samp = abs(norm_samp)
+)
+
+ggplot(la_df, aes(x = abs_v_samp)) + 
+  geom_histogram()
+```
+
+# Formatting Text
